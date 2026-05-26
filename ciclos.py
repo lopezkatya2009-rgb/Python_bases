@@ -13,8 +13,6 @@ while i < 10:
 print("Terminó la interación")
 """
 
-from re import X
-
 
 for x in "Katya":
-    print( X )
+    print(x)
