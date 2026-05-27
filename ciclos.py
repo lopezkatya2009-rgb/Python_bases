@@ -13,6 +13,20 @@ while i < 10:
 print("Terminó la interación")
 """
 
+#for x in "Katya":
+    # print(x)
 
-for x in "Katya":
-    print(x)
+while True:
+    print("Escribe la opcion deseada")
+    print("1: Saludar")
+    print("2: Salir")
+
+    respuesta = int(input())
+
+    if respuesta == 1:
+        print("Saludos chicos!")
+    elif respuesta == 2:
+        break
+  
+print("Terminando programa")
+
