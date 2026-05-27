@@ -3,7 +3,7 @@
 def saludar(nombre):
     print("Hola", nombre)
 
-#Celsius a Fahrenheit: (C * 1.8) + 32
+ #Celsius a Fahrenheit: (C * 1.8) + 32
 def convertir_a_fahrenheit(c):
     return (C * 1.8) + 32
 
