@@ -5,7 +5,7 @@ def saludar(nombre):
 
  #Celsius a Fahrenheit: (C * 1.8) + 32
 def convertir_a_fahrenheit(c):
-    return (C * 1.8) + 32
+    return (c * 1.8) + 32
 
 #saludar("Katya")
 #saludar("Ana") 
