@@ -57,11 +57,11 @@ def comprar_animal():
         if animal == "V":
           print(f"Tu carrito de compras contiene {carrito}") 
         continue
+
     if animal not in inventario:
         print(f"Lo sentimos, no contamos con el animal {animal}")
     elif inventario[animal] == 0:
         print(f"Lo sentimos, no tenemos en existencia el animal {animal}")
-
     elif animal not in carrito:
               carrito.append(animal)
     else:
@@ -96,3 +96,4 @@ while True:
     elif respuesta == 4:
         print("Salir del programa")
         break
+    
