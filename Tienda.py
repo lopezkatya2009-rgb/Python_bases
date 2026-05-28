@@ -1,3 +1,5 @@
+from datetime import datetime
+
 print("****************************")
 print("**     BIENVENIDO  A      **")
 print("** LA TIENDA DE MASCOTAS  **")
@@ -19,13 +21,16 @@ nombre_completo = nombre + "  " + apellido
 
 print("Gracias por visitarnos", nombre_completo)
 
+compras = []
+
 def mostrar_menu(): 
     print("")
     print("===========================")
     print("Selecciona la opcion que deseas:")
     print("1: Conocer cuántos animales tiene la tienda")
     print("2: Comprar un animal")
-    print("3: Salir del programa")
+    print("3: Mostrar compras")
+    print("4: Salir del programa")
 
 def mostrar_inventario():    
     print("Actualmente contamos con:")
@@ -33,19 +38,18 @@ def mostrar_inventario():
     print("En total tenemos", animales_totales, "animales")  
 
 def comprar_animal():
-
     carrito = []
 
     while True:
         print("¿Que animal deseas comprar? Solo puedes elegir 1 de cada especie")
         print("Escribe F para terminar la lista, o V para ver tu carrito")
         animal = input()
+
         if animal == "F": break
 
         if animal == "V":
-          print(f"Tu carrito de compras contiene {carrito}")
-            
-
+          print(f"Tu carrito de compras contiene {carrito}") 
+        continue
 
         if animal not in carrito:
               carrito.append(animal)
@@ -56,7 +60,17 @@ def comprar_animal():
     print("El contenido de tu carrito es")
     for animal in carrito:
         print("    ", animal)
+
+    #Agregar esta compra al carrito de compras
+    fecha = datetime.now()
+    compras.append( (nombre, carrito, fecha ) )    
  
+def mostrar_compras():
+    print("")
+    print("**** COMPRAS REALIZADAS ****")
+for compra in compras:
+    print(f"      {compra[0]} compró {compra[1]} en {compra[2]}")
+
 while True:
     mostrar_menu()
     respuesta = int(input())
@@ -66,5 +80,7 @@ while True:
     elif respuesta == 2:
         comprar_animal()
     elif respuesta == 3:
+        mostrar_compras()   
+    elif respuesta == 4:
         print("Salir del programa")
         break
