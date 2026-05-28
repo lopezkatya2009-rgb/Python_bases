@@ -33,9 +33,30 @@ def mostrar_inventario():
     print("En total tenemos", animales_totales, "animales")  
 
 def comprar_animal():
-    print("¿Que animal deseas comprar?")
-    animal = input()
-    print("Has comprado un", animal)
+
+    carrito = []
+
+    while True:
+        print("¿Que animal deseas comprar? Solo puedes elegir 1 de cada especie")
+        print("Escribe F para terminar la lista, o V para ver tu carrito")
+        animal = input()
+        if animal == "F": break
+
+        if animal == "V":
+          print(f"Tu carrito de compras contiene {carrito}")
+            
+
+
+        if animal not in carrito:
+              carrito.append(animal)
+        else:
+            print("Ese animal ya se encunetra en tu carrito")      
+        #print("Has comprado un", animal)
+
+    print("El contenido de tu carrito es")
+    for animal in carrito:
+        print("    ", animal)
+ 
 while True:
     mostrar_menu()
     respuesta = int(input())
