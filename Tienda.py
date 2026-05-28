@@ -5,11 +5,16 @@ print("**     BIENVENIDO  A      **")
 print("** LA TIENDA DE MASCOTAS  **")
 print("****************************")
 
-num_perros = 23
-num_gatos =10
-num_pajaros = 14
+inventario = {
+    "perros": 23,
+    "gatos": 20,
+    "pajaros": 14,
+    "conejos": 5
+}
 
-animales_totales = num_perros + num_gatos + num_pajaros
+animales_totales = 0
+for val in inventario.values():
+    animales_totales += val
 
 print("Por favor ingresa tu nombre")
 nombre = input()
@@ -33,9 +38,11 @@ def mostrar_menu():
     print("4: Salir del programa")
 
 def mostrar_inventario():    
-    print("Actualmente contamos con:")
-    print("Perros:", num_perros, "Gatos:", num_gatos, "Pajaros", num_pajaros)
-    print("En total tenemos", animales_totales, "animales")  
+    print("**** INVENTARIO ****")
+    for llave, valor in inventario.items():
+        print(f"   {llave}:  {valor}")
+    print("En total tenemos", animales_totales, "animales")
+
 
 def comprar_animal():
     carrito = []
@@ -50,16 +57,21 @@ def comprar_animal():
         if animal == "V":
           print(f"Tu carrito de compras contiene {carrito}") 
         continue
+    if animal not in inventario:
+        print(f"Lo sentimos, no contamos con el animal {animal}")
+    elif inventario[animal] == 0:
+        print(f"Lo sentimos, no tenemos en existencia el animal {animal}")
 
-        if animal not in carrito:
+    elif animal not in carrito:
               carrito.append(animal)
-        else:
-            print("Ese animal ya se encunetra en tu carrito")      
+    else:
+        print("Ese animal ya se encunetra en tu carrito")      
         #print("Has comprado un", animal)
 
     print("El contenido de tu carrito es")
     for animal in carrito:
         print("    ", animal)
+        inventario[animal] -= 1
 
     #Agregar esta compra al carrito de compras
     fecha = datetime.now()
