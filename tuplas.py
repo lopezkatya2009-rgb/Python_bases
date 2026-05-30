@@ -7,7 +7,7 @@ tupla = ["Katya", "Ana"]
 
 videojuegos = []
 #Nombre, Genero, Año
-final_fantasy_ = ("Final fantasy 7", "JRPG", 1997)
-videojuegos.append("Outer Wilds", "Aventura", 2019 )
+videojuegos.append( ("Final fantasy 7", "JRPG", 1997) )
+videojuegos.append( ("Outer Wilds", "Aventura", 2019) )
 print(videojuegos)
 
